@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.19 )
 project( MultiConfigCSharpExample LANGUAGES CSharp )
-add_library( ${PROJECT_NAME} SHARED "${CMAKE_SOURCE_DIR}/$<CONFIG>/test.cs" )
+add_executable( ${PROJECT_NAME} "${CMAKE_SOURCE_DIR}/$<CONFIG>/test.cs" )
 target_compile_options( ${PROJECT_NAME} PRIVATE "/langversion:6" )
 set_target_properties( ${PROJECT_NAME} PROPERTIES
   FOLDER SomeFolder
